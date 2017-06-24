@@ -69,7 +69,64 @@ var objectmap = [[
 				[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ] ] ]
 
 
-function makeobject(scene,box) {
+function makeobject(scene,box,finishhole) {
+	console.log(finishhole);
+	var endPlane = new BABYLON.Mesh.CreatePlane("plane_0", 10, scene);
+	endPlane.material = new BABYLON.StandardMaterial("Mat", scene);
+	endPlane.material.diffuseTexture = new BABYLON.Texture("image/texture/landscape.jpg", scene);
+	switch(finishhole.face){
+		case 0: //下
+			endPlane.position = new BABYLON.Vector3(
+					(finishhole.x - 5) * 10 + 5, -50 + 1, (finishhole.y - 5) * 10 + 5
+				);
+			endPlane.rotation = new BABYLON.Vector3(
+					Math.PI/2,0,0
+				);
+		break;
+		case 1: //右
+			endPlane.position = new BABYLON.Vector3(
+					50 - 1, (finishhole.y - 5) * 10 + 5,(finishhole.x - 5) * 10 + 5
+				);
+			endPlane.rotation = new BABYLON.Vector3(
+					0,Math.PI/2,0
+				);
+		break;
+		case 2: //左
+			endPlane.position = new BABYLON.Vector3(
+					-50 + 1, (finishhole.y - 5) * 10 + 5,(finishhole.x - 5) * 10 + 5
+				);
+			endPlane.rotation = new BABYLON.Vector3(
+					0,-Math.PI/2,0
+				);
+		break;
+		case 3: //後
+			endPlane.position = new BABYLON.Vector3(
+					(finishhole.x - 5) * 10 + 5, (finishhole.y - 5) * 10 + 5,50-1
+				);
+			endPlane.rotation = new BABYLON.Vector3(
+					0,0,0
+				);
+		break;
+		case 4: //前
+			endPlane.position = new BABYLON.Vector3(
+					(finishhole.x - 5) * 10 + 5, (finishhole.y - 5) * 10 + 5,-50+1
+				);
+			endPlane.rotation = new BABYLON.Vector3(
+					Math.PI,0,0
+				);
+		break;
+		case 5: //上
+			endPlane.position = new BABYLON.Vector3(
+					(finishhole.x - 5) * 10 + 5, 50 - 1, (finishhole.y - 5) * 10 + 5
+				);
+			endPlane.rotation = new BABYLON.Vector3(
+					-Math.PI/2,0,0
+				);
+		break;
+		default:
+		break;
+	}
+
 
 	var makeBox = function(x, y, face) {
 		var t_box = BABYLON.Mesh.CreateBox("crate_" + x + "_" + y, 10, scene);
@@ -161,5 +218,5 @@ function makeobject(scene,box) {
 			}
 		}
 	}
-
+	
 }
