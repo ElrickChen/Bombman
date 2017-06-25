@@ -35,6 +35,7 @@ html, body {
 		var gameState = true;
 		var destroyBox = 0;
 		var Time = 0;
+		var finishhole = {face:Math.floor((Math.random() * 5)),x:Math.floor((Math.random() * 8) + 1),y:Math.floor((Math.random() * 8) + 1)};
 		
         // You have to create a function called createScene. This function must return a BABYLON.Scene object
         // You can reference the following variables: scene, canvas
@@ -196,7 +197,7 @@ html, body {
 					Box[i][j]= new Array();
 				}
 				
-				makeobject(scene,Box);
+				makeobject(scene,Box,finishhole);
 				
 			}
 			
@@ -818,15 +819,73 @@ html, body {
 								bump.scaling = new BABYLON.Vector3(2,2,2);
 							}, 3000);
 						   }
-					   }
-					   man.moveWithCollisions(new BABYLON.Vector3(0,0,z));
-					   man.moveWithCollisions(new BABYLON.Vector3(x,0,0));
-					   man.moveWithCollisions(new BABYLON.Vector3(0,y,0));
+					    }
+					    man.moveWithCollisions(new BABYLON.Vector3(0,0,z));
+					    man.moveWithCollisions(new BABYLON.Vector3(x,0,0));
+					    man.moveWithCollisions(new BABYLON.Vector3(0,y,0));
 					   
-					   manParamter.x = man.position.x;
-					   manParamter.y = man.position.y;
-					   manParamter.z = man.position.z;
+					    manParamter.x = man.position.x;
+					    manParamter.y = man.position.y;
+					    manParamter.z = man.position.z;
 					   
+					    //Finish or not
+					    var decode_x = (man.position.x - 5) / 10 + 5;
+						var decode_y = (man.position.y - 5) / 10 + 5;
+						var decode_z = (man.position.z - 5) / 10 + 5;
+						decode_x = decode_x - Math.floor(decode_x) < Math.ceil(decode_x) - decode_x ? Math.floor(decode_x) :　Math.ceil(decode_x); 
+						decode_y = decode_y - Math.floor(decode_y) < Math.ceil(decode_y) - decode_y ? Math.floor(decode_y) :　Math.ceil(decode_y); 
+						decode_z = decode_z - Math.floor(decode_z) < Math.ceil(decode_z) - decode_z ? Math.floor(decode_z) :　Math.ceil(decode_z);
+						if(manParamter.face == finishhole.face){
+							switch(manParamter.face){
+								case 0: //下
+									if(decode_x == finishhole.x && decode_z == finishhole.y){
+										//*******finish*******//
+										console.log(decode_x,decode_y,decode_z);
+										console.log(finishhole);
+									}
+								break;
+								case 1: //右
+									if(decode_z == finishhole.x && decode_y == finishhole.y){
+										//*******finish*******//
+										console.log(decode_x,decode_y,decode_z);
+										console.log(finishhole);
+									}
+								break;
+								case 2: //左
+									if(decode_z == finishhole.x && decode_y == finishhole.y){
+										//*******finish*******//
+										console.log(decode_x,decode_y,decode_z);
+										console.log(finishhole);
+									}
+								break;
+								case 3: //後
+									if(decode_x == finishhole.x && decode_y == finishhole.y){
+										//*******finish*******//
+										console.log(decode_x,decode_y,decode_z);
+										console.log(finishhole);
+									}
+								break;
+								case 4: //前
+									if(decode_x == finishhole.x && decode_y == finishhole.y){
+										//*******finish*******//
+										console.log(decode_x,decode_y,decode_z);
+										console.log(finishhole);
+									}
+								break;
+								case 5: //上
+									if(decode_x == finishhole.x && decode_z == finishhole.y){
+										//*******finish*******//
+										console.log(decode_x,decode_y,decode_z);
+										console.log(finishhole);
+									}
+								break;
+								default:
+								break;
+							}
+						}
+
+
+
 					}));
 
 				scene.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnKeyUpTrigger, function (evt) {
