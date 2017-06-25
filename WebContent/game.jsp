@@ -5,7 +5,7 @@
 
 <title>Bombman</title>
 <!-- Babylon.js -->
-<script src="babylon.custom.js"></script>
+<script src="https://preview.babylonjs.com/babylon.js"></script>
 <script src="Object.js"></script>
 <style>
 html, body {
@@ -42,7 +42,6 @@ html, body {
         // More info here: https://doc.babylonjs.com/generals/The_Playground_Tutorial
         
         var createScene = function() {
-
         	// This creates a basic Babylon Scene object (non-mesh)
             var scene = new BABYLON.Scene(engine);
 			//scene.workerCollisions = true;
@@ -188,8 +187,7 @@ html, body {
 			}
 			
 			var Box = [];
-			var finishhole = {face:Math.floor((Math.random() * 5)),x:Math.floor((Math.random() * 8) + 1),y:Math.floor((Math.random() * 8) + 1)};
-			console.log(finishhole);
+
 			{//Object
 				
 				for (var i = 0; i<6; i++){
@@ -198,7 +196,7 @@ html, body {
 					Box[i][j]= new Array();
 				}
 				
-				makeobject(scene,Box,finishhole.face,finishhole.x,finishhole.y);
+				makeobject(scene,Box);
 				
 			}
 			
@@ -854,18 +852,24 @@ html, body {
 					}));
 		   	}
 			
+
+			
+			
+
             return scene;
         };
 
 
 
+
+
+        
         var scene = createScene();
 		//var gameoverscene = creatoverScene();
 		
         engine.runRenderLoop(function () {
 			scene.render();
 			Time++;
-			console.log(finishhole);
         });
 
         // Resize
