@@ -39,7 +39,7 @@ public class recordboard extends HttpServlet {
 		myList.add(new recorddata(Integer.parseInt(num), name, time));
 		for (int i = 0; i < myList.size(); i++) {
 			for (int j = myList.size() - 1; j > i; j--) {
-				if (myList.get(j).compareTo(myList.get(j - 1)) == -1) {
+				if (myList.get(j).compareTo(myList.get(j - 1)) == 1) {
 					recorddata temp = myList.get(j);
 					myList.set(j, myList.get(j - 1));
 					myList.set(j - 1, temp);
