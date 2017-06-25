@@ -28,15 +28,16 @@ public class recordboard extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String ti=request.getParameter("t");
+		String time=request.getParameter("t");
 		String num=request.getParameter("n");
-		String na=request.getParameter("na");
-			myList.add(new recorddata(Integer.parseInt(num),na,ti));
+		String name=request.getParameter("na");
+		
+		myList.add(new recorddata(Integer.parseInt(num),name,time));
 		for(int i=0;i<myList.size();i++)
 		{
 			for(int j=myList.size();j>i;j--)
 			{
-				if(myList.get(j).compareTo(myList.get(j-1))==-1)
+				if(j != 1 && myList.get(j).compareTo(myList.get(j-1))==-1)
 				{
 					recorddata temp=myList.get(j);
 					myList.set(j,myList.get(j-1));

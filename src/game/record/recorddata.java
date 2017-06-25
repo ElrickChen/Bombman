@@ -4,7 +4,7 @@ public class recorddata {
 	private int score;
 	private String name;
 	private String time;
-	public recorddata(int score,String name,String ti)
+	public recorddata(int score,String name,String time)
 	{
 		this.score=score;
 		this.name=new String(name);
