@@ -134,6 +134,7 @@ html, body {
 			    var clockmusic = new BABYLON.Sound("gunshot", "music/clock.mp3", scene);
 			    var walkmusic = new BABYLON.Sound("gunshot", "music/walk.mp3", scene);
 				var gameovermusic = new BABYLON.Sound("gunshot", "music/gameover.mp3", scene);
+				var endgamemusic = new BABYLON.Sound("gunshot", "music/endgame.mp3", scene);
 			}
 
 			{//Space
@@ -840,43 +841,55 @@ html, body {
 								case 0: //下
 									if(decode_x == finishhole.x && decode_z == finishhole.y){
 										//*******finish*******//
-										console.log(decode_x,decode_y,decode_z);
-										console.log(finishhole);
+										endgamemusic.play();
+										setTimeout(function () {
+											location.href="/Bombman/endclass?time="+Time+"&number="+destroyBox;
+										},3000);
 									}
 								break;
 								case 1: //右
 									if(decode_z == finishhole.x && decode_y == finishhole.y){
 										//*******finish*******//
-										console.log(decode_x,decode_y,decode_z);
-										console.log(finishhole);
+										endgamemusic.play();
+										setTimeout(function () {
+											location.href="/Bombman/endclass?time="+Time+"&number="+destroyBox;
+										},3000);
 									}
 								break;
 								case 2: //左
 									if(decode_z == finishhole.x && decode_y == finishhole.y){
 										//*******finish*******//
-										console.log(decode_x,decode_y,decode_z);
-										console.log(finishhole);
+										endgamemusic.play();
+										setTimeout(function () {
+											location.href="/Bombman/endclass?time="+Time+"&number="+destroyBox;
+										},3000);
 									}
 								break;
 								case 3: //後
 									if(decode_x == finishhole.x && decode_y == finishhole.y){
 										//*******finish*******//
-										console.log(decode_x,decode_y,decode_z);
-										console.log(finishhole);
+										endgamemusic.play();
+										setTimeout(function () {
+											location.href="/Bombman/endclass?time="+Time+"&number="+destroyBox;
+										},3000);
 									}
 								break;
 								case 4: //前
 									if(decode_x == finishhole.x && decode_y == finishhole.y){
 										//*******finish*******//
-										console.log(decode_x,decode_y,decode_z);
-										console.log(finishhole);
+										endgamemusic.play();
+										setTimeout(function () {
+											location.href="/Bombman/endclass?time="+Time+"&number="+destroyBox;
+										},3000);
 									}
 								break;
 								case 5: //上
 									if(decode_x == finishhole.x && decode_z == finishhole.y){
 										//*******finish*******//
-										console.log(decode_x,decode_y,decode_z);
-										console.log(finishhole);
+										endgamemusic.play();
+										setTimeout(function () {
+											location.href="/Bombman/endclass?time="+Time+"&number="+destroyBox;
+										},3000);
 									}
 								break;
 								default:

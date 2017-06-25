@@ -73,7 +73,7 @@ function makeobject(scene,box,finishhole) {
 	console.log(finishhole);
 	var endPlane = new BABYLON.Mesh.CreatePlane("plane_0", 10, scene);
 	endPlane.material = new BABYLON.StandardMaterial("Mat", scene);
-	endPlane.material.diffuseTexture = new BABYLON.Texture("image/texture/landscape.jpg", scene);
+	endPlane.material.diffuseTexture = new BABYLON.Texture("image/texture/blackhole.png", scene);
 	switch(finishhole.face){
 		case 0: //下
 			endPlane.position = new BABYLON.Vector3(
