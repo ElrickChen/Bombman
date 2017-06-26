@@ -199,7 +199,7 @@ html, body {
 				}
 				
 				makeobject(scene,Box,finishhole);
-				
+				//console.log(finishhole);
 			}
 			
 			{//Man
@@ -848,7 +848,7 @@ html, body {
 									}
 								break;
 								case 1: //右
-									if(decode_z == finishhole.x && decode_y == finishhole.y){
+									if(decode_z == finishhole.y && decode_y == finishhole.x){
 										//*******finish*******//
 										endgamemusic.play();
 										setTimeout(function () {
@@ -857,7 +857,7 @@ html, body {
 									}
 								break;
 								case 2: //左
-									if(decode_z == finishhole.x && decode_y == finishhole.y){
+									if(decode_z == finishhole.y && decode_y == finishhole.x){
 										//*******finish*******//
 										endgamemusic.play();
 										setTimeout(function () {
