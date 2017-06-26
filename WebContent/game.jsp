@@ -35,7 +35,7 @@ html, body {
 		var gameState = true;
 		var destroyBox = 0;
 		var Time = 0;
-		var finishhole = {face:Math.floor((Math.random() * 5)),x:Math.floor((Math.random() * 8) + 1),y:Math.floor((Math.random() * 8) + 1)};
+		var finishhole = {face:0,x:0,y:0};
 		
         // You have to create a function called createScene. This function must return a BABYLON.Scene object
         // You can reference the following variables: scene, canvas
