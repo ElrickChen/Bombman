@@ -208,7 +208,7 @@ function makeobject(scene,box,finishhole) {
 						break;
 						case 1: //右
 							endPlane.position = new BABYLON.Vector3(
-									50 - 1, (finishhole.y - 5) * 10 + 5,(finishhole.x - 5) * 10 + 5
+									50 - 1, (finishhole.x - 5) * 10 + 5,(finishhole.y - 5) * 10 + 5
 								);
 							endPlane.rotation = new BABYLON.Vector3(
 									0,Math.PI/2,0
@@ -216,7 +216,7 @@ function makeobject(scene,box,finishhole) {
 						break;
 						case 2: //左
 							endPlane.position = new BABYLON.Vector3(
-									-50 + 1, (finishhole.y - 5) * 10 + 5,(finishhole.x - 5) * 10 + 5
+									-50 + 1, (finishhole.x - 5) * 10 + 5,(finishhole.y - 5) * 10 + 5
 								);
 							endPlane.rotation = new BABYLON.Vector3(
 									0,-Math.PI/2,0
