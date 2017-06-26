@@ -248,8 +248,7 @@ function makeobject(scene,box,finishhole) {
 						break;
 						default:
 						break;
-					}
-					
+					}		
 				}
 			}
 		}

@@ -18,6 +18,6 @@
 		}
 	%>
 	<br />
-	<a href="wel.html">再玩一次</a>
+	<a href="game.jsp">再玩一次</a> <a href="wel.html">回首頁</a>
 </body>
 </html>

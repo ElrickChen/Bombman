@@ -1,4 +1,4 @@
-package game.record;
+ï»¿package game.record;
 
 public class recorddata {
 	private int score;
@@ -33,6 +33,6 @@ public class recorddata {
 	}
 
 	public String toString() {
-		return "±o¤À:" + score + "\t¦W¦r:" + name + "\t®É¶¡:" + time + "\n";
+		return "å¾—åˆ†:" + score + "\tåå­—:" + name + "\tæ™‚é–“:" + time + "\n";
 	}
 }
