@@ -570,15 +570,15 @@ html, body {
 
 								switch(manParamter.face){
 								    case 0: // 下
-									    if ((Math.abs(manParamter.x - bump.position.x) + Math.abs(manParamter.z - bump.position.z)) <= 10){
-											setTimeout(function(){
+									    if ((Math.abs(manParamter.x - bump.position.x) + Math.abs(manParamter.z - bump.position.z)) <= 11){
+									    	gameState = false;
+									    	setTimeout(function(){
 												gameovermusic.play();
 											},1000)
 											setTimeout(function(){
 												location.href="/Bombman/endclass?time="+Time+"&number="+destroyBox;
 											},4000);
-										}
-									    gameState = false;
+										}  
 									    var decode_x = (bump.position.x - 5)/10+5;
 										var decode_z = (bump.position.z - 5) / 10 + 5;
 										//console.log(decode_x,decode_z);
@@ -611,7 +611,8 @@ html, body {
                                         }
 									    break;
 								    case 1: // 右
-								        if ((Math.abs(manParamter.y - bump.position.y) + Math.abs(manParamter.z - bump.position.z)) <= 10){
+								        if ((Math.abs(manParamter.y - bump.position.y) + Math.abs(manParamter.z - bump.position.z)) <= 11){
+								        	gameState = false;
 								        	setTimeout(function(){
 												gameovermusic.play();
 											},1000)
@@ -645,7 +646,8 @@ html, body {
 									    }
 									    break;
 									case 2: // 左
-									    if ((Math.abs(manParamter.y - bump.position.y) + Math.abs(manParamter.z - bump.position.z)) <= 10){
+									    if ((Math.abs(manParamter.y - bump.position.y) + Math.abs(manParamter.z - bump.position.z)) <= 11){
+									    	gameState = false;
 									    	setTimeout(function(){
 												gameovermusic.play();
 											},1000)
@@ -679,7 +681,8 @@ html, body {
 									    }
 									    break;
 									case 3: // 後
-									    if ((Math.abs(manParamter.x - bump.position.x) + Math.abs(manParamter.z - bump.position.z)) <= 10){
+									    if ((Math.abs(manParamter.x - bump.position.x) + Math.abs(manParamter.y - bump.position.y)) <= 11){
+									    	gameState = false;
 									    	setTimeout(function(){
 												gameovermusic.play();
 											},1000)
@@ -714,6 +717,7 @@ html, body {
 									    break;
 									case 4: // 前
 									    if ((Math.abs(manParamter.x - bump.position.x) + Math.abs(manParamter.y - bump.position.y)) <= 10){
+									    	gameState = false;
 									    	setTimeout(function(){
 												gameovermusic.play();
 											},1000)
@@ -748,6 +752,7 @@ html, body {
 									    break;
 									case 5: // 上
 									    if ((Math.abs(manParamter.x - bump.position.x) + Math.abs(manParamter.z - bump.position.z)) <= 10){
+									    	gameState = false;
 									    	setTimeout(function(){
 												gameovermusic.play();
 											},1000)
