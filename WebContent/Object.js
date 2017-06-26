@@ -85,9 +85,9 @@ function makeobject(scene,box,finishhole) {
 	}
 
 	var boxnumber = caculateBoxNumber();
-	console.log("Box Number:"+boxnumber);
+	//console.log("Box Number:"+boxnumber);
 	var randomEndPointBoxNumber = Math.floor((Math.random() * boxnumber));
-	console.log("Random Box Number:"+randomEndPointBoxNumber);
+	//console.log("Random Box Number:"+randomEndPointBoxNumber);
 
 	var makeBox = function(x, y, face) {
 		var t_box = BABYLON.Mesh.CreateBox("crate_" + x + "_" + y, 10, scene);
@@ -186,13 +186,13 @@ function makeobject(scene,box,finishhole) {
 				}
 
 				if(existedBoxNumbeer == randomEndPointBoxNumber && createtimes == 0){
-					console.log(existedBoxNumbeer);
+					//console.log(existedBoxNumbeer);
 					createtimes = 1;
 					finishhole.face = face;
 					finishhole.x = x;
 					finishhole.y = y;
 					
-					console.log(finishhole);
+					//console.log(finishhole);
 
 					var endPlane = new BABYLON.Mesh.CreatePlane("plane_0", 10, scene);
 					endPlane.material = new BABYLON.StandardMaterial("Mat", scene);
@@ -208,7 +208,7 @@ function makeobject(scene,box,finishhole) {
 						break;
 						case 1: //右
 							endPlane.position = new BABYLON.Vector3(
-									50 - 1, (finishhole.x - 5) * 10 + 5,(finishhole.y - 5) * 10 + 5
+									50 - 1, (finishhole.y - 5) * 10 + 5,(finishhole.x - 5) * 10 + 5
 								);
 							endPlane.rotation = new BABYLON.Vector3(
 									0,Math.PI/2,0
@@ -216,7 +216,7 @@ function makeobject(scene,box,finishhole) {
 						break;
 						case 2: //左
 							endPlane.position = new BABYLON.Vector3(
-									-50 + 1, (finishhole.x - 5) * 10 + 5,(finishhole.y - 5) * 10 + 5
+									-50 + 1, (finishhole.y - 5) * 10 + 5,(finishhole.x - 5) * 10 + 5
 								);
 							endPlane.rotation = new BABYLON.Vector3(
 									0,-Math.PI/2,0
